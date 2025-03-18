@@ -774,6 +774,20 @@ createButton("Chaos (Theme if want destroy only!)", function()
         end
     end)
 
+createButton("Very funni jumpstyle song", function()
+        if soundInstance then
+            soundInstance:Destroy()
+            soundInstance = nil
+        else
+            soundInstance = Instance.new("Sound", game.Workspace)
+            soundInstance.SoundId = "rbxassetid://81704507776926"
+            soundInstance.Looped = true
+            soundInstance.Volume = 30
+            soundInstance.PlaybackSpeed = 0.7
+            soundInstance:Play()
+        end
+    end)
+
     createButton("Gangster theme remix", function()
         if soundInstance then
             soundInstance:Destroy()
