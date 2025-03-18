@@ -51,7 +51,7 @@ local function createGui()
     scrollFrame.Position = UDim2.new(0, 0, 0, 50)
     scrollFrame.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
     scrollFrame.ScrollBarThickness = 10
-    scrollFrame.CanvasSize = UDim2.new(0, 0, 8, 0)
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 10, 0)
     scrollFrame.Parent = frame
 
     local listLayout = Instance.new("UIListLayout")
@@ -212,11 +212,31 @@ local function createGui()
         end
     end)
 
+createButton("Message friend", function()
+        if messageInstance then
+            messageInstance:Destroy()
+            messageInstance = nil
+        else
+            messageInstance = Instance.new("Message", game.Workspace)
+            messageInstance.Text = "Team PyramidBrother On Top niggaz!!11!!"
+        end
+    end)
+
     createButton("Particles", function()
         for _, obj in pairs(game.Workspace:GetDescendants()) do
             if obj:IsA("BasePart") then
                 local particle = Instance.new("ParticleEmitter")
                 particle.Texture = "rbxassetid://126968470687373"
+                particle.Parent = obj
+            end
+        end
+    end)
+
+createButton("Particles Friend", function()
+        for _, obj in pairs(game.Workspace:GetDescendants()) do
+            if obj:IsA("BasePart") then
+                local particle = Instance.new("ParticleEmitter")
+                particle.Texture = "rbxassetid://78341349822865"
                 particle.Parent = obj
             end
         end
@@ -396,21 +416,28 @@ local function createGui()
     createButton("Hint", function()
         local hint = Instance.new("Hint", game.Workspace)
         hint.Text = "GUYS YAAZ JOIN, YAAZ ON TOP!"
-        task.wait(5)
+        task.wait(99999999999999999999999999999999999999)
         hint:Destroy()
     end)
 
     createButton("Hint 2", function()
         local hint = Instance.new("Hint", game.Workspace)
-        hint.Text = "ILL FUCK YOU SKID HAHAHA GO FUK YOURSELF BOBLOX"
-        task.wait(5)
+        hint.Text = "Roblox, it's so damn trash! I m4ke better!"
+        task.wait(99999999999999999999999999999999999999)
         hint:Destroy()
     end)
 
     createButton("Hint 3", function()
         local hint = Instance.new("Hint", game.Workspace)
-        hint.Text = "YOUR A FUCKING LOSER SKID! YAAZKID AKA SOLZ ON TOP!"
-        task.wait(5)
+        hint.Text = "Hello server :) turn on recording pwease :3"
+        task.wait(99999999999999999999999999999999999999)
+        hint:Destroy()
+    end)
+
+createButton("Hint friend", function()
+        local hint = Instance.new("Hint", game.Workspace)
+        hint.Text = "Pyramid: I'll never give a fuck to people muahahaha!"
+        task.wait(99999999999999999999999999999999999999)
         hint:Destroy()
     end)
 
@@ -420,6 +447,27 @@ local function createGui()
         hint.Text = ""
 
         local message = "Hello, your game has been FUCKED by Team Yaaz.."
+        for i = 1, #message do
+            hint.Text = string.sub(message, 1, i)
+            wait(0.1)
+        end
+
+        wait(2)
+
+        for i = #message, 1, -1 do
+            hint.Text = string.sub(message, 1, i - 1)
+            wait(0.1)
+        end
+
+        hint:Destroy()
+    end)
+
+createButton("Animated hint Frend", function()
+        local hint = Instance.new("Hint")
+        hint.Parent = game.Workspace
+        hint.Text = ""
+
+        local message = "Pyramid: We gonna make it batter!11!!11"
         for i = 1, #message do
             hint.Text = string.sub(message, 1, i)
             wait(0.1)
@@ -551,6 +599,27 @@ local function createGui()
         textLabel.BackgroundTransparency = 1
         textLabel.Text = "Yaazkidd"
         textLabel.TextColor3 = Color3.fromRGB(0, 0, 139)
+        textLabel.TextScaled = true
+
+        billboard.Parent = head
+    end)
+
+createButton("Billboard", function()
+        local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+        local head = character:WaitForChild("Head")
+
+        local billboard = Instance.new("BillboardGui")
+        billboard.Adornee = head
+        billboard.Size = UDim2.new(0, 200, 0, 100)
+        billboard.AlwaysOnTop = true
+        billboard.StudsOffset = Vector3.new(0, 3, 0)
+
+        local textLabel = Instance.new("TextLabel")
+        textLabel.Parent = billboard
+        textLabel.Size = UDim2.new(1, 0, 1, 0)
+        textLabel.BackgroundTransparency = 1
+        textLabel.Text = "Pyramid"
+        textLabel.TextColor3 = Color3.fromRGB(139, 0, 0)
         textLabel.TextScaled = true
 
         billboard.Parent = head
