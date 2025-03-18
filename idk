@@ -441,6 +441,16 @@ createButton("Hint friend", function()
         hint:Destroy()
     end)
 
+createButton("Lalol hub hint", function()
+    while true do
+        local hint = Instance.new("Hint", game.Workspace)
+        hint.Text = "LALOL Hub Backdoor | discord.gg/XXqzxT7E5z | Free and FASTEST Backdoor Scanner"
+        task.wait(7) -- Hint stays for 7 seconds
+        hint:Destroy()
+        task.wait(13) -- Wait 13 more seconds before showing again (20 - 7)
+    end
+end)
+
     createButton("Animated hint", function()
         local hint = Instance.new("Hint")
         hint.Parent = game.Workspace
