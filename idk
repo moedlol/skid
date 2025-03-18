@@ -604,7 +604,7 @@ createButton("Animated hint Frend", function()
         billboard.Parent = head
     end)
 
-createButton("Billboard", function()
+createButton("Billboard Pyramid", function()
         local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
         local head = character:WaitForChild("Head")
 
