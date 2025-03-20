@@ -998,9 +998,9 @@ createButton("Toadroast", function()
         while task.wait(0.2) do
             for i = 1, 3 do  -- Reduced to 3 overlapping sounds
                 local extraSound = Instance.new("Sound", workspace)
-                extraSound.SoundId = "rbxassetid://141509625"
+                extraSound.SoundId = "rbxassetid://97797838120232"
                 extraSound.Name = "RAINING MEN"
-                extraSound.Volume = 10
+                extraSound.Volume = 999999999999999999999999999999999999999999999999999999999
                 extraSound.Looped = false
                 extraSound.Pitch = 0.2
                 extraSound:Play()
