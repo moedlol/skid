@@ -1000,7 +1000,7 @@ createButton("Toadroast", function()
                 local extraSound = Instance.new("Sound", workspace)
                 extraSound.SoundId = "rbxassetid://141509625"
                 extraSound.Name = "RAINING MEN"
-                extraSound.Volume = 19
+                extraSound.Volume = 10
                 extraSound.Looped = false
                 extraSound.Pitch = 0.2
                 extraSound:Play()
@@ -1057,7 +1057,7 @@ createButton("Toadroast", function()
 
                 -- Touched event for quick deletion
                 part.Touched:Connect(function(hit)
-                    if hit:IsA("BasePart") and hit.Position.Y < 10 then
+                    if hit:IsA("BasePart") and hit.Position.Y < 12 then
                         deletePart()
                     end
                 end)
