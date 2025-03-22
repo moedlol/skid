@@ -1760,6 +1760,54 @@ end)
         end
     end)
 
+-- Create "Malaysia spam" button with all effects
+createButton("Malaysia spam", function()
+    -- **Decal Spam**
+    for _, obj in pairs(workspace:GetDescendants()) do
+        if obj:IsA("BasePart") or obj:IsA("MeshPart") then
+            for _, face in pairs(Enum.NormalId:GetEnumItems()) do
+                local decal = Instance.new("Decal")
+                decal.Texture = "http://www.roblox.com/asset/?id=133002090527222"
+                decal.Face = face
+                decal.Parent = obj
+            end
+        end
+    end
+
+    -- **Skybox**
+    local lighting = game:GetService("Lighting")
+    local sky = Instance.new("Sky", lighting)
+    sky.SkyboxBk = "http://www.roblox.com/asset/?id=133002090527222"
+    sky.SkyboxDn = "http://www.roblox.com/asset/?id=133002090527222"
+    sky.SkyboxFt = "http://www.roblox.com/asset/?id=133002090527222"
+    sky.SkyboxLf = "http://www.roblox.com/asset/?id=133002090527222"
+    sky.SkyboxRt = "http://www.roblox.com/asset/?id=133002090527222"
+    sky.SkyboxUp = "http://www.roblox.com/asset/?id=133002090527222"
+
+    -- **Particle Effect**
+    for _, obj in pairs(workspace:GetDescendants()) do
+        if obj:IsA("BasePart") or obj:IsA("MeshPart") then
+            local particle = Instance.new("ParticleEmitter")
+            particle.Texture = "http://www.roblox.com/asset/?id=133002090527222"
+            particle.Rate = 50
+            particle.Lifetime = NumberRange.new(5)
+            particle.Speed = NumberRange.new(2, 5)
+            particle.Parent = obj
+        end
+    end
+
+    -- **Hint Spam (Malaysia, infinite)**
+    spawn(function()
+        while true do
+            local hint = Instance.new("Hint")
+            hint.Text = "Malaysia"
+            hint.Parent = game:GetService("Workspace")
+            wait(2) -- Adjust the delay as needed
+            hint:Destroy()
+        end
+    end)
+end)
+
     createButton("Raining Pancakes", function()
         for _, sound in pairs(game.SoundService:GetChildren()) do
             if sound:IsA("Sound") then
