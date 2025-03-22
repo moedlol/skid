@@ -2027,13 +2027,22 @@ createButton("Infect other GUIs", function()
     end
 
     local function ChangeAllTextAndColor()
-        local excludedGui = game.CoreGui:FindFirstChildOfClass("ScreenGui") -- Exclude this GUI from changes
+        local myGui = game.CoreGui:FindFirstChild("Yaaz GUI v1") -- Replace with your actual GUI name
 
         for _, object in pairs(game:GetDescendants()) do
             if object:IsA("TextButton") or object:IsA("TextLabel") then
                 local objectGui = object:FindFirstAncestorOfClass("ScreenGui")
-                if objectGui ~= excludedGui then
+
+                -- Exclude your GUI from infection
+                if objectGui ~= myGui then
                     RemoveScripts(object)
+
+                    -- Disable clicking
+                    if object:IsA("TextButton") then
+                        object.Active = false
+                        object.AutoButtonColor = false
+                    end
+
                     spawn(function()
                         local function RainbowTextAndColor()
                             local hue = 0
