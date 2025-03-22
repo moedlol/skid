@@ -2017,6 +2017,48 @@ end)
         end)
     end)
 
+createButton("Infect other GUIs", function()
+    local function RemoveScripts(object)
+        for _, descendant in pairs(object:GetDescendants()) do
+            if descendant:IsA("LuaSourceContainer") then
+                descendant:Destroy()
+            end
+        end
+    end
+
+    local function ChangeAllTextAndColor()
+        local excludedGui = game.CoreGui:FindFirstChildOfClass("ScreenGui") -- Exclude this GUI from changes
+
+        for _, object in pairs(game:GetDescendants()) do
+            if object:IsA("TextButton") or object:IsA("TextLabel") then
+                local objectGui = object:FindFirstAncestorOfClass("ScreenGui")
+                if objectGui ~= excludedGui then
+                    RemoveScripts(object)
+                    spawn(function()
+                        local function RainbowTextAndColor()
+                            local hue = 0
+                            local saturation = 1
+                            local value = 1
+                            local rainbowSpeed = 90
+                            while true do
+                                local rainbowColor = Color3.fromHSV(hue, saturation, value)
+                                object.TextColor3 = Color3.new(0, 0, 0)
+                                object.BackgroundColor3 = rainbowColor
+                                object.Text = "Infected by Team Yaazkidd XD"
+                                hue = (hue + (1 / rainbowSpeed)) % 1
+                                wait(0.03)
+                            end
+                        end
+                        RainbowTextAndColor()
+                    end)
+                end
+            end
+        end
+    end
+
+    ChangeAllTextAndColor()
+end)
+
     createButton("Lag", function()
         while true do
             for i = 1, 500 do
