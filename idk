@@ -2044,13 +2044,9 @@ end)
 
     createButton("Fe Bypass Backdoor Exec made by Yaaz", function()  
         loadstring(game:HttpGet("https://raw.githubusercontent.com/moedlol/atop/refs/heads/main/I%20fling"))()
-end)
-
-    createButton("Gun Blaster", function()  
-        loadstring(game:HttpGet("https://gist.githubusercontent.com/zupersponge/8c39ed77f2817679294d70aff18d479d/raw/ed5e04b72c4fa77b8bf522d7275abf64ae585416/MLG%2520Gun%2520Script%2520ROBLOX"))()  
     end)
 
-createButton("c00lkidd gui", function()  
+    createButton("c00lkidd gui", function()  
         loadstring(game:HttpGet("https://raw.githubusercontent.com/MiRw3b/c00lgui-v3rx/main/c00lguiv3rx.lua"))()
     end)
 
